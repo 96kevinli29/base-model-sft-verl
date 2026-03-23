@@ -7,7 +7,7 @@ Minimal SFT training/evaluation workspace based on [verl](https://github.com/vol
 ## Why this repo
 
 This project focuses on an often-missing step in open pipelines: **SFT alignment before reinforcement learning (RL)**.
-For many papers, this stage is not fully open-sourced, especially for **Qwen3-4B-Base**.
+For many papers, this stage is not fully open-sourced, especially for **Qwen3-XB-Base**, **Qwen3.5-XB-Base**...
 
 This repository provides a practical SFT workflow centered on **high-difficulty math and science problems** so the base model has stronger reasoning alignment before entering RL stages (such as PPO/GRPO).
 
