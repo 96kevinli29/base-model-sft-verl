@@ -4,6 +4,13 @@ GitHub: [96kevinli29/base-model-sft-verl](https://github.com/96kevinli29/base-mo
 
 Minimal SFT training/evaluation workspace based on [verl](https://github.com/volcengine/verl).
 
+## Why this repo
+
+This project focuses on an often-missing step in open pipelines: **SFT alignment before reinforcement learning (RL)**.
+For many papers, this stage is not fully open-sourced, especially for **Qwen3-4B-Base**.
+
+This repository provides a practical SFT workflow centered on **high-difficulty math and science problems** so the base model has stronger reasoning alignment before entering RL stages (such as PPO/GRPO).
+
 ## Quick Start
 
 ```bash
