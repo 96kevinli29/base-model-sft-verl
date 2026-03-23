@@ -1,0 +1,49 @@
+# ========== 密钥与本地配置（切勿提交） ==========
+.env
+.env.*
+!.env.example
+.wandb_key
+.wandb_entity
+*.pem
+id_rsa
+id_rsa.pub
+
+# ========== 缓存与临时 ==========
+.hf_cache/
+.hf_tmp/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.swp
+*~
+
+# ========== 训练/实验产物 ==========
+logs/
+wandb/
+outputs/
+artifacts/
+results/
+
+# ========== 本地工具链（体积巨大） ==========
+.local_tools/
+tools/miniconda3/
+# 安装包与 wheel（另存网盘或从新环境下载，勿进 Git）
+tools/*.whl
+tools/Miniconda3*.sh
+
+# ========== 数据与权重（另存对象存储或 HF，不进 Git） ==========
+data/
+my_data/
+# 项目根目录下的 Qwen 基座与微调 checkpoint 目录
+Qwen3-*/
+
+# ========== 临时导出/检查输出 ==========
+out.txt
+out_formatted.txt
+dataset_inspection.txt
+
+# ========== IDE（按需取消注释） ==========
+.idea/

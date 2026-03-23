@@ -1,0 +1,6 @@
+# 6 个测试集配置说明
+# 已在本项目中添加 verl/verl/trainer/config/data/six_test_sets.yaml
+# 使用方式（在项目根目录 /project/home/p201251/hyl_ppo 下）：
+#   1. 生成 parquet: python scripts/export_test_sets_parquet.py
+#   2. 启动训练时加: data=six_test_sets
+# 六个测试集: aime_2024, aime_2025, amc23, GPQA-Diamond, gsm8k, MATH-lighteval

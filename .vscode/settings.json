@@ -1,0 +1,16 @@
+{
+  "terminal.integrated.defaultProfile.linux": "verl",
+  "terminal.integrated.profiles.linux": {
+    "bash": {
+      "path": "bash"
+    },
+    "verl": {
+      "path": "bash",
+      "args": [
+        "--init-file",
+        "${workspaceFolder}/term_init_verl.sh",
+        "-i"
+      ]
+    }
+  }
+}
