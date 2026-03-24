@@ -20,7 +20,6 @@ The current production dataset directory is:
 
 - SFT training launcher: `run_sft.sh`
 - Evaluation launcher: `run_benchmark.sh`
-- Data construction scripts: `scripts/build_40k_sft.py`
 - Utility scripts and configs for distributed training
 - Documentation for setup and workflow
 
