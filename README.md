@@ -63,7 +63,6 @@ cd base-model-sft-verl
 
 - Training checkpoints: `outputs/<experiment_name>/`
 - Training and benchmark logs: `logs/`
-- Dataset artifacts (current): `my_data/sft_50k_apex/`
 
 ## Related Hugging Face Repositories
 
