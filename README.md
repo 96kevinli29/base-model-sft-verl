@@ -1,6 +1,6 @@
 # Base-Model SFT with verl
 
-Code repository for supervised fine-tuning (SFT) before RL, built on [verl](https://github.com/volcengine/verl).
+Code repository for supervised fine-tuning (SFT) before Reinforcement Learning, built on [verl](https://github.com/volcengine/verl).
 
 This project provides a practical and reproducible pipeline for training Qwen base models on a reasoning-focused instruction dataset, then evaluating checkpoints with a benchmark script.
 
