@@ -8,9 +8,9 @@ This project provides a practical and reproducible pipeline for training Qwen ba
 
 Replace these placeholders with your final URLs:
 
-- GitHub code repository: `https://github.com/<your-org>/<your-code-repo>`
-- Hugging Face model card: `https://huggingface.co/<your-org>/<your-sft-model-repo>`
-- Hugging Face dataset card: `https://huggingface.co/datasets/<your-org>/<your-dataset-repo>`
+- GitHub code repository: `[https://github.com/<your-org>/<your-code-repo>](https://github.com/96kevinli29/base-model-sft-verl/)`
+- Hugging Face model card: `[https://huggingface.co/<your-org>/<your-sft-model-repo>](https://huggingface.co/96kevinli29/Qwen3-4B-SFT-Math)`
+- Hugging Face dataset card: `[https://huggingface.co/datasets/<your-org>/<your-dataset-repo>](https://huggingface.co/datasets/96kevinli29/Dataset-SFT-Math)`
 
 ## What This Repository Contains
 
@@ -54,21 +54,6 @@ cd base-model-sft-verl
 - `SFT_EXPERIMENT_NAME`: output and W&B run name
 - `SFT_LR`: override learning rate (default in script is `2e-5`)
 - `SFT_ENABLE_THINKING`: enable thinking-style supervision (`true` by default)
-
-## Outputs
-
-- Training checkpoints: `outputs/<experiment_name>/`
-- Training and benchmark logs: `logs/`
-- Dataset artifacts: `my_data/40k_sft/`
-
-## Related Hugging Face Repositories
-
-- SFT model card (post-SFT checkpoint):
-  `[https://huggingface.co/<your-org>/<your-sft-model-repo>](https://huggingface.co/96kevinli29/Qwen3-4B-SFT-Math)`
-- Dataset recipe card:
-  `[https://huggingface.co/datasets/<your-org>/<your-dataset-repo>](https://huggingface.co/datasets/96kevinli29/Dataset-SFT-Math)`
-
-Replace links and repo names with your final Hugging Face publishing targets.
 
 ## Documentation
 
