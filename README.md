@@ -1,15 +1,32 @@
-# base-model-sft-verl
+# Base-Model SFT with verl
 
-GitHub: [96kevinli29/base-model-sft-verl](https://github.com/96kevinli29/base-model-sft-verl)
+Code repository for supervised fine-tuning (SFT) before RL, built on [verl](https://github.com/volcengine/verl).
 
-Minimal SFT training/evaluation workspace based on [verl](https://github.com/volcengine/verl).
+This project provides a practical and reproducible pipeline for training Qwen base models on a curated 40K reasoning-heavy instruction dataset, then evaluating checkpoints with a benchmark script.
 
-## Why this repo
+## Project Links
 
-This project focuses on an often-missing step in open pipelines: **SFT alignment before reinforcement learning (RL)**.
-For many papers, this stage is not fully open-sourced, especially for **Qwen3-XB-Base**, **Qwen3.5-XB-Base**...
+Replace these placeholders with your final URLs:
 
-This repository provides a practical SFT workflow centered on **high-difficulty math and science problems** so the base model has stronger reasoning alignment before entering RL stages (such as PPO/GRPO).
+- GitHub code repository: `https://github.com/<your-org>/<your-code-repo>`
+- Hugging Face model card: `https://huggingface.co/<your-org>/<your-sft-model-repo>`
+- Hugging Face dataset card: `https://huggingface.co/datasets/<your-org>/<your-dataset-repo>`
+
+## What This Repository Contains
+
+- SFT training launcher: `run_sft.sh`
+- Evaluation launcher: `run_benchmark.sh`
+- Data construction scripts: `scripts/build_40k_sft.py`
+- Utility scripts and configs for distributed training
+- Documentation for setup and workflow
+
+## Why This Project
+
+Many open RL pipelines skip or simplify the SFT stage. This repository focuses on that missing step:
+
+- Start from a base model (for example `Qwen3-4B-Base` or `Qwen3-8B-Base`)
+- Run full-parameter SFT on a high-quality mixed dataset
+- Produce a stronger aligned checkpoint for later PPO/GRPO-style RL
 
 ## Quick Start
 
@@ -18,17 +35,43 @@ git clone https://github.com/96kevinli29/base-model-sft-verl.git
 cd base-model-sft-verl
 ```
 
-1. Prepare environment via `activate_verl.sh` and dependencies.
-2. Download model/data from Hugging Face (replace placeholders):
-   - Model: `https://huggingface.co/<your-org>/<your-model-repo>`
-   - Dataset: `https://huggingface.co/datasets/<your-org>/<your-dataset-repo>`
-3. Set paths with env vars:
-   - `SFT_MODEL_PATH`
-   - `SFT_DATA_DIR`
-4. Run SFT and evaluation using `run_sft.sh` and `run_benchmark.sh`.
+1. Prepare environment and dependencies.
+   - Use `activate_verl.sh` as the environment entrypoint.
+2. Prepare base model and dataset locally.
+   - Base model path can be set with `SFT_MODEL_PATH`.
+   - Dataset directory can be set with `SFT_DATA_DIR`.
+3. Run a short sanity job first.
+   - `sbatch -o logs/sft_test_%j.out -e logs/sft_test_%j.err run_sft.sh test`
+4. Run full training.
+   - `sbatch -o logs/sft_run_%j.out -e logs/sft_run_%j.err run_sft.sh run`
+5. Run evaluation.
+   - `sbatch -o logs/bench_full_%j.out -e logs/bench_full_%j.err run_benchmark.sh full`
 
-## Docs
+## Environment Variables
 
-- Chinese SFT guide: `sft_zh.md`
-- English SFT guide: `sft_en.md`
-- Git upload notes: `GITHUB_UPLOAD.md`
+- `SFT_MODEL_PATH`: base model directory (relative name or absolute path)
+- `SFT_DATA_DIR`: dataset directory (relative under `my_data/` or absolute path)
+- `SFT_EXPERIMENT_NAME`: output and W&B run name
+- `SFT_LR`: override learning rate (default in script is `2e-5`)
+- `SFT_ENABLE_THINKING`: enable thinking-style supervision (`true` by default)
+
+## Outputs
+
+- Training checkpoints: `outputs/<experiment_name>/`
+- Training and benchmark logs: `logs/`
+- Dataset artifacts: `my_data/40k_sft/`
+
+## Related Hugging Face Repositories
+
+- SFT model card (post-SFT checkpoint):
+  `[https://huggingface.co/<your-org>/<your-sft-model-repo>](https://huggingface.co/96kevinli29/Qwen3-4B-SFT-Math)`
+- Dataset recipe card:
+  `[https://huggingface.co/datasets/<your-org>/<your-dataset-repo>](https://huggingface.co/datasets/96kevinli29/Dataset-SFT-Math)`
+
+Replace links and repo names with your final Hugging Face publishing targets.
+
+## Documentation
+
+- English SFT flow: `sft_en.md`
+- Chinese SFT flow: `sft_zh.md`
+- GitHub upload notes: `GITHUB_UPLOAD.md`
