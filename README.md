@@ -2,15 +2,19 @@
 
 Code repository for supervised fine-tuning (SFT) before RL, built on [verl](https://github.com/volcengine/verl).
 
-This project provides a practical and reproducible pipeline for training Qwen base models on a curated 40K reasoning-heavy instruction dataset, then evaluating checkpoints with a benchmark script.
+This project provides a practical and reproducible pipeline for training Qwen base models on a reasoning-focused instruction dataset, then evaluating checkpoints with a benchmark script.
 
 ## Project Links
 
-Replace these placeholders with your final URLs:
+- GitHub code repository: `https://github.com/96kevinli29/base-model-sft-verl/`
+- Hugging Face model card: `https://huggingface.co/96kevinli29/Qwen3-4B-SFT-Math/`
+- Hugging Face dataset card: `https://huggingface.co/datasets/96kevinli29/Dataset-SFT-Math/`
 
-- GitHub code repository: https://github.com/96kevinli29/base-model-sft-verl/
-- Hugging Face model card: https://huggingface.co/96kevinli29/Qwen3-4B-SFT-Math/
-- Hugging Face dataset card: https://huggingface.co/datasets/96kevinli29/Dataset-SFT-Math/
+## Current Dataset Path
+
+The current production dataset directory is:
+
+- `/project/home/p201251/hyl_ppo/my_data/sft_50k_apex`
 
 ## What This Repository Contains
 
@@ -54,6 +58,19 @@ cd base-model-sft-verl
 - `SFT_EXPERIMENT_NAME`: output and W&B run name
 - `SFT_LR`: override learning rate (default in script is `2e-5`)
 - `SFT_ENABLE_THINKING`: enable thinking-style supervision (`true` by default)
+
+## Outputs
+
+- Training checkpoints: `outputs/<experiment_name>/`
+- Training and benchmark logs: `logs/`
+- Dataset artifacts (current): `my_data/sft_50k_apex/`
+
+## Related Hugging Face Repositories
+
+- SFT model card (post-SFT checkpoint):
+  `https://huggingface.co/96kevinli29/Qwen3-4B-SFT-Math/`
+- Dataset recipe card:
+  `https://huggingface.co/datasets/96kevinli29/Dataset-SFT-Math/`
 
 ## Documentation
 
