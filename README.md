@@ -10,12 +10,6 @@ This project provides a practical and reproducible pipeline for training Qwen ba
 - Hugging Face model card: https://huggingface.co/96kevinli29/Qwen3-4B-SFT-Math
 - Hugging Face dataset card: https://huggingface.co/datasets/96kevinli29/Dataset-SFT-Math
 
-## Current Dataset Path
-
-The current production dataset directory is:
-
-- `/project/home/p201251/hyl_ppo/my_data/sft_50k_apex`
-
 ## What This Repository Contains
 
 - SFT training launcher: `run_sft.sh`
@@ -63,15 +57,7 @@ cd base-model-sft-verl
 - Training checkpoints: `outputs/<experiment_name>/`
 - Training and benchmark logs: `logs/`
 
-## Related Hugging Face Repositories
-
-- SFT model card (post-SFT checkpoint):
-  `https://huggingface.co/96kevinli29/Qwen3-4B-SFT-Math/`
-- Dataset recipe card:
-  `https://huggingface.co/datasets/96kevinli29/Dataset-SFT-Math/`
-
 ## Documentation
 
 - English SFT flow: `sft_en.md`
 - Chinese SFT flow: `sft_zh.md`
-- GitHub upload notes: `GITHUB_UPLOAD.md`
