@@ -7,8 +7,8 @@ This project provides a practical and reproducible pipeline for training Qwen ba
 ## Project Links
 
 - GitHub code repository: https://github.com/96kevinli29/base-model-sft-verl
-- Hugging Face model card: https://huggingface.co/96kevinli29/Qwen3-4B-SFT-Math
-- Hugging Face dataset card: https://huggingface.co/datasets/96kevinli29/Dataset-SFT-Math
+- Hugging Face model card: https://huggingface.co/96kevinli29/Qwen3-4B-SFT
+- Hugging Face dataset card: https://huggingface.co/datasets/96kevinli29/SFT-Dataset
 
 ## What This Repository Contains
 
